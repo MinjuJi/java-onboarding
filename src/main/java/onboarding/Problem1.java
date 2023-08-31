@@ -29,6 +29,14 @@ class Problem1 {
 			sum += temp;
 		}
 		return sum;
+	}
 
+	public static int getMulipleOfPage(String pageTypeOfString) {
+		int multiple = 1;
+		for (int i = 0; i < pageTypeOfString.length(); i++) {
+			int temp = Character.getNumericValue(pageTypeOfString.charAt(i));
+			multiple *= temp;
+		}
+		return multiple;
 	}
 }
