@@ -22,4 +22,13 @@ class Problem1 {
 		return false;
 	}
 
+	public static int getSumOfPage(String pageTypeOfString) {
+		int sum = 0;
+		for (int i = 0; i < pageTypeOfString.length(); i++) {
+			int temp = Character.getNumericValue(pageTypeOfString.charAt(i));
+			sum += temp;
+		}
+		return sum;
+
+	}
 }
