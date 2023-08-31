@@ -33,7 +33,7 @@ class Problem1 {
 		String pageTypeOfString = String.valueOf(page);
 		int sum = getSumOfPage(pageTypeOfString);
 		int mul = getMultipleOfPage(pageTypeOfString);
-		int max = sum > mul ? sum : mul;
+		int max = sum >= mul ? sum : mul;
 		return max;
 	}
 
