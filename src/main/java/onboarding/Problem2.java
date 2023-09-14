@@ -8,12 +8,21 @@ public class Problem2 {
   private static final int MIN_LENGTH = 1;
   private static final int MAX_LENGTH = 1000;
 
-
   public static String solution(String cryptogram) {
-    if (!isValidLengthStringException(cryptogram))
-      throw new IllegalArgumentException("유효한 문자열의 길이를 입력해주세요. (1~1000자)");
+    checkException(cryptogram);
     String answer = getAnswer(cryptogram);
     return answer;
+  }
+
+  public static void checkException(String cryptogram) {
+    if (!isValidLengthStringException(cryptogram))
+      throw new IllegalArgumentException("유효한 문자열의 길이를 입력해주세요. (1~1000자)");
+    if (!isLowerCaseString(cryptogram))
+      throw new IllegalArgumentException("문자열은 모두 소문자여야 합니다.");
+  }
+
+  public static boolean isLowerCaseString(String cryptogram) {
+    return cryptogram.matches("^[a-z]*$");
   }
 
   public static boolean isValidLengthStringException(String cryptogram) {
