@@ -1,5 +1,8 @@
 package onboarding;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Problem2 {
 
   public static String solution(String cryptogram) {
@@ -11,7 +14,7 @@ public class Problem2 {
     boolean isLengthZero = cryptogram.length() == 0 ? true : false;
     return isLengthZero;
   }
-  
+
   public static boolean isNotMoreDelete(String cryptogram) {
     boolean isNotMoreDelete = true;
     for (int i = 1; i < cryptogram.length(); i++) {
@@ -22,4 +25,23 @@ public class Problem2 {
     return isNotMoreDelete;
   }
 
+  public static String deleteOverlapChar(String cryptogram) {
+    List<Integer> deleteIndexOfCharAt = new ArrayList<>();
+    StringBuffer sb = new StringBuffer(cryptogram);
+    StringBuffer result = new StringBuffer();
+
+    for (int i = 1; i < sb.length(); i++) {
+      char now = sb.charAt(i);
+      if (now == sb.charAt(i - 1)) {
+        deleteIndexOfCharAt.add(i - 1);
+        deleteIndexOfCharAt.add(i);
+      }
+    }
+    for (int i = 0; i < cryptogram.length(); i++) {
+      if (!deleteIndexOfCharAt.contains(i)) {
+        result.append(cryptogram.charAt(i));
+      }
+    }
+    return result.toString();
+  }
 }
