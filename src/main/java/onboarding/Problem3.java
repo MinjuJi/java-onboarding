@@ -15,6 +15,16 @@ public class Problem3 {
     return String.valueOf(number);
   }
 
+  public static int getClapCount(String numberStr) {
+    int count = 0;
+    for (int i = 0; i < numberStr.length(); i++) {
+      char numTypeOfChar = numberStr.charAt(i);
+      if (isClapTiming(numTypeOfChar))
+        count++;
+    }
+    return count;
+  }
+
   public static boolean isClapTiming(char numTypeOfChar) {
     boolean isClapTiming = false;
     if (numTypeOfChar == THREE || numTypeOfChar == SIX || numTypeOfChar == NINE)
