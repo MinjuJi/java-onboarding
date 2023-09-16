@@ -15,6 +15,14 @@ public class Problem4 {
       return (char) ('a' + ('z' - alphabet));
     }
   }
-  
-  
+
+  public static String getAnswer(String word) {
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < word.length(); i++) {
+      char c = word.charAt(i);
+      sb.append(getFrogWord(c));
+    }
+    return sb.toString();
+  }
+
 }
