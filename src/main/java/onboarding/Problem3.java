@@ -15,5 +15,10 @@ public class Problem3 {
     return String.valueOf(number);
   }
 
-
+  public static boolean isClapTiming(char numTypeOfChar) {
+    boolean isClapTiming = false;
+    if (numTypeOfChar == THREE || numTypeOfChar == SIX || numTypeOfChar == NINE)
+      isClapTiming = true;
+    return isClapTiming;
+  }
 }
