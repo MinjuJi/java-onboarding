@@ -11,6 +11,15 @@ public class Problem3 {
     return answer;
   }
 
+  public static int getAnswer(int number) {
+    int count = 0;
+    for (int i = 1; i <= number; i++) {
+      String numberStr = makeStringNumber(i);
+      count += getClapCount(numberStr);
+    }
+    return count;
+  }
+
   public static String makeStringNumber(int number) {
     return String.valueOf(number);
   }
