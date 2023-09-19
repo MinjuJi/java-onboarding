@@ -21,8 +21,8 @@ public class Problem6 {
   private static final String REGEX_NICKNAME = "^[가-힣]*$";
 
   public static List<String> solution(List<List<String>> forms) {
-    List<String> answer = List.of("answer");
-    return answer;
+    checkException(forms);
+    return getAnswer(forms);
   }
 
   private static List<String> getAnswer(List<List<String>> forms) {
