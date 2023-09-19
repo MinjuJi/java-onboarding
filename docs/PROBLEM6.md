@@ -21,3 +21,40 @@
 | forms | result |
 | --- | --- |
 | [ ["jm@email.com", "제이엠"], ["jason@email.com", "제이슨"], ["woniee@email.com", "워니"], ["mj@email.com", "엠제이"], ["nowm@email.com", "이제엠"] ] | ["jason@email.com", "jm@email.com", "mj@email.com"] |
+
+<br>
+
+---
+
+## 기능 구현 목록
+
+- 허용된 이메일 도메인이 아닌경우 아래 로직에 포함하지 않는다.
+  - 이메일을 @ 기준으로 분리한다.
+  - 이메일을 검증한다.
+  
+- 닉네임의 중복을 검사한다.
+  - 2개의 글자로 분리된 닉네임, 닉네임에 해당하는 이메일을 가지고 있는 HashMap을 생성한다.
+  - 생성하는 도중 닉네임의 중복이 존재하는 경우 결과값에 이메일을 추가한다.
+  
+- 최종적으로 반환할 때 오름차순으로 정렬하고, 중복을 제거하여 반환한다.
+
+
+크루는 1명 이상 10,000명 이하이다.
+이메일은 이메일 형식에 부합하며, 전체 길이는 11자 이상 20자 미만이다.
+닉네임은 한글만 가능하고 전체 길이는 1자 이상 20자 미만이다.
+
+
+feat: Problem6 - 
+1. 상수 추가
+2. 리스트 forms에서 이메일을 반환하는 getEmail 함수 구현
+3. 리스트 forms에서 닉네임을 반환하는 getNickname 함수 구현
+4. 닉네임 중 같은 글자가 연속적으로 포함되는 닉네임을 작성한 지원자의 이메일을 반환하는 getInvalidEmails 함수 구현
+5. 스트림을 이용하여 하나의 이메일 리스트를 반환하는 getAnswer 함수 구현
+6. 크루가 1~10000명인지 검사하는 isValidCrewRange 함수 구현
+7. 이메일 형식(@)인지 검사하는 isValidEmailRegex 함수 구현
+8. 유효한 이메일 도메인인지 검사하는 isValidDomain 함수 구현
+9. 유효한 이메일 길이인지 검사하는 isValidEmailLength 함수 구현
+10. 닉네임이 한글인지 검사하는 isValidNicknameRegex 함수 구현
+11. 유효한 닉네임 길이인지 검사하는 isValidNicknameLength 함수 구현
+12. 제한사항을 검사하는 checkException 함수 구현
+13. solution 함수 구현
