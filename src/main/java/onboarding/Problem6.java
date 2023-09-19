@@ -61,4 +61,9 @@ public class Problem6 {
   private static String getNickname(List<String> form) {
     return form.get(INDEX_NICKNAME);
   }
+
+  private static boolean isValidCrewRange(List<List<String>> forms) {
+    return forms.size() >= MIN_NUMBER_CREW && forms.size() <= MAX_NUMBER_CREW;
+  }
+
 }
