@@ -86,4 +86,8 @@ public class Problem6 {
                 .allMatch(form -> getNickname(form).matches(REGEX_NICKNAME));
   }
 
+  private static boolean isValidNicknameLength(List<List<String>> forms) {
+    return forms.stream()
+                .allMatch(form -> getNickname(form).length() >= MIN_LENGTH_NICKNAME && getNickname(form).length() <= MAX_LENGTH_NICKNAME);
+  }
 }
