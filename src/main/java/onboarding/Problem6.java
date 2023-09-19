@@ -66,4 +66,8 @@ public class Problem6 {
     return forms.size() >= MIN_NUMBER_CREW && forms.size() <= MAX_NUMBER_CREW;
   }
 
+  private static boolean isValidEmailRegex(List<List<String>> forms) {
+    return forms.stream()
+                .allMatch(form -> getEmail(form).matches(REGEX_EMAIL));
+  }
 }
