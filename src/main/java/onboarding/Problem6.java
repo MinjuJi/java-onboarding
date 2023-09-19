@@ -24,4 +24,8 @@ public class Problem6 {
   private static String getEmail(List<String> form) {
     return form.get(INDEX_EMAIL);
   }
+
+  private static String getNickname(List<String> form) {
+    return form.get(INDEX_NICKNAME);
+  }
 }
