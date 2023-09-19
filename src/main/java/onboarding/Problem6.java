@@ -1,5 +1,7 @@
 package onboarding;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Problem6 {
@@ -19,6 +21,23 @@ public class Problem6 {
   public static List<String> solution(List<List<String>> forms) {
     List<String> answer = List.of("answer");
     return answer;
+  }
+
+  private static List<String> getInvalidEmails(HashMap<String, String> separatedNicknameAndEmail, List<String> form) {
+    List<String> result = new ArrayList<>();
+
+    String email = getEmail(form);
+    String nickname = getNickname(form);
+
+    for (int i = 0; i < nickname.length() - 1; i++) {
+      String separatedNickname = nickname.substring(i, i + 2);
+      String InvalidEmail = separatedNicknameAndEmail.putIfAbsent(separatedNickname, email);
+      if (InvalidEmail != null) {
+        result.add(InvalidEmail);
+        result.add(email);
+      }
+    }
+    return result;
   }
 
   private static String getEmail(List<String> form) {
