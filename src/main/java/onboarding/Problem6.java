@@ -70,4 +70,10 @@ public class Problem6 {
     return forms.stream()
                 .allMatch(form -> getEmail(form).matches(REGEX_EMAIL));
   }
+
+  private static boolean isValidDomain(List<List<String>> forms) {
+    return forms.stream()
+                .allMatch(form -> getEmail(form).contains(DOMAIN_EMAIL));
+  }
+
 }
