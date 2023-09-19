@@ -20,4 +20,8 @@ public class Problem6 {
     List<String> answer = List.of("answer");
     return answer;
   }
+
+  private static String getEmail(List<String> form) {
+    return form.get(INDEX_EMAIL);
+  }
 }
