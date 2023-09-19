@@ -1,8 +1,10 @@
 package onboarding;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Problem6 {
 
@@ -20,6 +22,18 @@ public class Problem6 {
 
   public static List<String> solution(List<List<String>> forms) {
     List<String> answer = List.of("answer");
+    return answer;
+  }
+
+  private static List<String> getAnswer(List<List<String>> forms) {
+    HashMap<String, String> separatedNicknameAndEmail = new HashMap<>();
+
+    List<String> answer = forms.stream()
+                               .map(form -> getInvalidEmails(separatedNicknameAndEmail, form))
+                               .flatMap(Collection::stream)
+                               .distinct()
+                               .sorted()
+                               .collect(Collectors.toList());
     return answer;
   }
 
