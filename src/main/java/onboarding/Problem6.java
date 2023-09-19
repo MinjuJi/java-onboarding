@@ -62,6 +62,26 @@ public class Problem6 {
     return form.get(INDEX_NICKNAME);
   }
 
+  private static void checkException(List<List<String>> forms) {
+    if (!isValidCrewRange(forms))
+      throw new IllegalArgumentException("크루원은 1명 이상 10,000 이하입니다.");
+
+    if (!isValidEmailRegex(forms))
+      throw new IllegalArgumentException("이메일 형식(@)으로 입력해주세요.");
+
+    if (!isValidDomain(forms))
+      throw new IllegalArgumentException("유효한 이메일 도메인은 [email.com] 입니다.");
+
+    if (!isValidEmailLength(forms))
+      throw new IllegalArgumentException("유효한 이메일의 길이는 11자 이상 20자 미만입니다.");
+
+    if (!isValidNicknameRegex(forms))
+      throw new IllegalArgumentException("닉네임은 한글만 가능합니다.");
+
+    if (!isValidNicknameLength(forms))
+      throw new IllegalArgumentException("유효한 닉네임의 길이는 1자 이상 20자 미만입니다.");
+  }
+
   private static boolean isValidCrewRange(List<List<String>> forms) {
     return forms.size() >= MIN_NUMBER_CREW && forms.size() <= MAX_NUMBER_CREW;
   }
