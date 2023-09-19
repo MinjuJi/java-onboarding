@@ -76,4 +76,9 @@ public class Problem6 {
                 .allMatch(form -> getEmail(form).contains(DOMAIN_EMAIL));
   }
 
+  private static boolean isValidEmailLength(List<List<String>> forms) {
+    return forms.stream()
+                .allMatch(form -> getEmail(form).length() >= MIN_LENGTH_EMAIL && getEmail(form).length() <= MAX_LENGTH_EMAIL);
+  }
+
 }
