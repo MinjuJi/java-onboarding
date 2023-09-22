@@ -1,5 +1,6 @@
 package onboarding;
 
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -24,6 +25,19 @@ public class Problem7 {
 
   public static List<String> solution(String user, List<List<String>> friends, List<String> visitors) {
     return null;
+  }
+
+  private static boolean isValidIdLength(String user, List<List<String>> friends, List<String> visitors) {
+    boolean userIdLength = user.length() >= MIN_ID_LENGTH && user.length() <= MAX_ID_LENGTH;
+
+    boolean friendsIdLength = friends.stream()
+                                     .flatMap(Collection::stream)
+                                     .allMatch(friend -> friend.length() >= MIN_ID_LENGTH && friend.length() <= MAX_ID_LENGTH);
+
+    boolean visitorsIdLength = visitors.stream()
+                                       .allMatch(visitor -> visitor.length() >= MIN_ID_LENGTH && visitor.length() <= MAX_ID_LENGTH);
+
+    return userIdLength && friendsIdLength && visitorsIdLength;
   }
 
   private static List<String> getAnswer() {
