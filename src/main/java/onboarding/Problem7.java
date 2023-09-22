@@ -40,6 +40,19 @@ public class Problem7 {
     return userIdLength && friendsIdLength && visitorsIdLength;
   }
 
+  private static boolean isValidIdLowerCase(String user, List<List<String>> friends, List<String> visitors) {
+    boolean userIdLowerCase = user.matches(ID_REGEX_LOWERCASE);
+
+    boolean friendsIdLowerCase = friends.stream()
+                                        .flatMap(Collection::stream)
+                                        .allMatch(friend -> friend.matches(ID_REGEX_LOWERCASE));
+
+    boolean visitorsIdLowerCase = visitors.stream()
+                                          .allMatch(visitor -> visitor.matches(ID_REGEX_LOWERCASE));
+
+    return userIdLowerCase && friendsIdLowerCase && visitorsIdLowerCase;
+  }
+
   private static List<String> getAnswer() {
     List<String> answer = userAndScoreMap.entrySet()
                                          .stream()
