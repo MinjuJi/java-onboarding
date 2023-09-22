@@ -24,4 +24,11 @@ public class Problem7 {
     return null;
   }
 
+  private static void getFriendsSet(String user, List<List<String>> friends) {
+    for (List<String> friend : friends) {
+      if (friend.contains(user))
+        userFriendsSet.addAll(friend);
+    }
+  }
+
 }
