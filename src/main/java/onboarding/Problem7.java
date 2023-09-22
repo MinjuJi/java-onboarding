@@ -53,6 +53,10 @@ public class Problem7 {
     return userIdLowerCase && friendsIdLowerCase && visitorsIdLowerCase;
   }
 
+  private static boolean isValidFriendsSize(List<List<String>> friends) {
+    return friends.size() >= MIN_FRIENDS_SIZE && friends.size() <= MAX_FRIENDS_SIZE;
+  }
+
   private static List<String> getAnswer() {
     List<String> answer = userAndScoreMap.entrySet()
                                          .stream()
