@@ -24,6 +24,20 @@ public class Problem7 {
     return null;
   }
 
+  private static void updateScoreMap(String user, List<List<String>> friends, List<String> visitors) {
+    for (List<String> friend : friends) {
+      String friend1 = friend.get(0);
+      String friend2 = friend.get(1);
+      if (userFriendsSet.contains(friend1) || userFriendsSet.contains(friend2)) {
+        updateRecommendScore(friend1, FRIENDS_POINT);
+        updateRecommendScore(friend2, FRIENDS_POINT);
+      }
+    }
+    for (String visitor : visitors) {
+      updateRecommendScore(visitor, VISIORS_POINT);
+    }
+  }
+
   private static void updateRecommendScore(String friend, int point) {
     userAndScoreMap.put(friend, userAndScoreMap.getOrDefault(friend, 0) + point);
   }
