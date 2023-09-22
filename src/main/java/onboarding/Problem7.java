@@ -24,6 +24,12 @@ public class Problem7 {
     return null;
   }
 
+  private static void removeUserFriends() {
+    for (String friend : userFriendsSet) {
+      userAndScoreMap.remove(friend);
+    }
+  }
+
   private static void updateScoreMap(List<List<String>> friends, List<String> visitors) {
     for (List<String> friend : friends) {
       String friend1 = friend.get(0);
