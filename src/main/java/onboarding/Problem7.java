@@ -27,6 +27,20 @@ public class Problem7 {
     return null;
   }
 
+  private static void checkExeption(String user, List<List<String>> friends, List<String> visitors) {
+    if (!isValidIdLength(user, friends, visitors))
+      throw new IllegalArgumentException("유효한 ID의 길이는 1~30자입니다.");
+
+    if (!isValidIdLowerCase(user, friends, visitors))
+      throw new IllegalArgumentException("ID는 알파벳 소문자로만 이루어져야 합니다.");
+
+    if (!isValidFriendsSize(friends))
+      throw new IllegalArgumentException("리스트 friends의 크기는 1~10,000 입니다.");
+
+    if (!isValidVisitorsSize(visitors))
+      throw new IllegalArgumentException("리스트 visitors의 크기는 0~10,000 입니다.");
+  }
+
   private static boolean isValidIdLength(String user, List<List<String>> friends, List<String> visitors) {
     boolean userIdLength = user.length() >= MIN_ID_LENGTH && user.length() <= MAX_ID_LENGTH;
 
