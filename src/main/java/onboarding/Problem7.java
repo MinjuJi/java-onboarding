@@ -24,7 +24,7 @@ public class Problem7 {
     return null;
   }
 
-  private static void updateScoreMap(String user, List<List<String>> friends, List<String> visitors) {
+  private static void updateScoreMap(List<List<String>> friends, List<String> visitors) {
     for (List<String> friend : friends) {
       String friend1 = friend.get(0);
       String friend2 = friend.get(1);
