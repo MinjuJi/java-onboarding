@@ -24,7 +24,11 @@ public class Problem7 {
   private static Map<String, Integer> userAndScoreMap = new HashMap<>();
 
   public static List<String> solution(String user, List<List<String>> friends, List<String> visitors) {
-    return null;
+    checkExeption(user, friends, visitors);
+    getFriendsSet(user, friends);
+    updateScoreMap(friends, visitors);
+    removeUserFriends();
+    return getAnswer();
   }
 
   private static void checkExeption(String user, List<List<String>> friends, List<String> visitors) {
