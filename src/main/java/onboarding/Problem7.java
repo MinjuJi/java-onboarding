@@ -1,10 +1,12 @@
 package onboarding;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Problem7 {
   private static final int FRIENDS_POINT = 10;
@@ -22,6 +24,17 @@ public class Problem7 {
 
   public static List<String> solution(String user, List<List<String>> friends, List<String> visitors) {
     return null;
+  }
+
+  private static List<String> getAnswer() {
+    List<String> answer = userAndScoreMap.entrySet()
+                                         .stream()
+                                         .sorted(Map.Entry.comparingByKey())
+                                         .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                                         .map(Map.Entry::getKey)
+                                         .limit(5)
+                                         .collect(Collectors.toList());
+    return answer;
   }
 
   private static void removeUserFriends() {
