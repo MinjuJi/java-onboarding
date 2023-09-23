@@ -41,5 +41,7 @@
 8. 아이디가 알파벳 소문자인지 검사하는 isValidIdLowerCase 함수 구현
 9. 리스트 friends 크기가 유효한지 검사하는 isValidFriendsSize 함수 구현
 10. 리스트 visitors 크기가 유효한지 검사하는 isValidVisitorsSize 함수 구현
-11. 제한사항을 처리하는 checkException 함수 구현
-12. solution 함수 구현
+11. friends에 중복된 요소가 있는지 검사하는 hasDuplicates 함수 구현
+12. 추천 친구가 없는 경우 예외를 발생시키는 hasNoRecommendedFriends 함수 구현
+13. 제한사항을 처리하는 checkException 함수 구현
+14. solution 함수 구현
