@@ -30,6 +30,7 @@ public class Problem7 {
     getFriendsSet(user, friends);
     updateScoreMap(friends, visitors);
     removeUserFriends();
+    hasNoRecommendedFriends();
     return getAnswer();
   }
 
@@ -93,6 +94,11 @@ public class Problem7 {
       friendsSet.add(temp);
     }
     return friends.size() != friendsSet.size();
+  }
+
+  private static void hasNoRecommendedFriends() {
+    if (userAndScoreMap.size() == 0)
+      throw new IllegalArgumentException("추천 친구가 없습니다.");
   }
 
   private static List<String> getAnswer() {
