@@ -27,8 +27,8 @@ public class Problem7 {
 
   public static List<String> solution(String user, List<List<String>> friends, List<String> visitors) {
     checkExeption(user, friends, visitors);
-    getFriendsSet(user, friends);
-    updateScoreMap(friends, visitors);
+    getUserFriendsSet(user, friends);
+    getUserAndScoreMap(friends, visitors);
     removeUserFriends();
     hasNoRecommendedFriends();
     return getAnswer();
@@ -118,7 +118,7 @@ public class Problem7 {
     }
   }
 
-  private static void updateScoreMap(List<List<String>> friends, List<String> visitors) {
+  private static void getUserAndScoreMap(List<List<String>> friends, List<String> visitors) {
     for (List<String> friend : friends) {
       String friend1 = friend.get(0);
       String friend2 = friend.get(1);
@@ -136,7 +136,7 @@ public class Problem7 {
     userAndScoreMap.put(friend, userAndScoreMap.getOrDefault(friend, 0) + point);
   }
 
-  private static void getFriendsSet(String user, List<List<String>> friends) {
+  private static void getUserFriendsSet(String user, List<List<String>> friends) {
     for (List<String> friend : friends) {
       if (friend.contains(user))
         userFriendsSet.addAll(friend);
