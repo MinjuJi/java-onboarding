@@ -32,10 +32,10 @@
 ## 기능 구현 목록
 
 1. 상수 및 변수 추가
-2. user의 친구관계를 구하는 getFriendsSet 함수 구현
+2. user의 친구관계를 구하는 getUserFriendsSet 함수 구현
 3. 친구 추천 점수를 추가하는 updateRecommendScore 함수 구현
-4. 미스터코 규칙에 따라 추천 점수를 추가하는 updateScoreMap 함수 구현
-5. 친구 추천 점수 Map에서 user와 user의 친구들을 제거하는 removeMyFriends 함수 구현
+4. 미스터코 규칙에 따라 추천 점수를 추가하는 getUserAndScoreMap 함수 구현
+5. 친구 추천 점수 Map에서 user와 user의 친구들을 제거하는 removeUserFriends 함수 구현
 6. 정답을 도출하는 getAsnwer 함수 구현
 7. 유효한 아이디 길이인지 검사하는 isValidIdLength 함수 구현
 8. 아이디가 알파벳 소문자인지 검사하는 isValidIdLowerCase 함수 구현
